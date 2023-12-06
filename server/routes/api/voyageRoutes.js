@@ -4,6 +4,6 @@ const router = require('express').Router();
 // import controller methods
 const {
 
-} = require('../../controllers/voyageControllers');
+} = require('../../controllers/voyageControllers.js');
 
 // routes
