@@ -2,6 +2,7 @@ import React from 'react';
 
 function Navigation({ setActiveSection, activeSection }) {
   return (
+    
     <nav>
       <ul>
         <li className={activeSection === 'galaxyMap' ? 'active' : ''} onClick={() => setActiveSection('galaxyMap')}>Galaxy Map</li>
