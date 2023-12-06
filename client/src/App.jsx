@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navigation from './components/pages/Navigation';
 import GalaxyMap from './components/pages/GalaxyMap';

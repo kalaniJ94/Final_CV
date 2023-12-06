@@ -1,14 +1,29 @@
 import React from 'react';
 
-function Navigation({ setActiveSection, activeSection }) {
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+function Navigation({ setActivePage, activePage }) {
   return (
+    <Container>
+
+  <Row>
     <nav>
       <ul>
-        <li className={activeSection === 'galaxyMap' ? 'active' : ''} onClick={() => setActiveSection('galaxyMap')}>Galaxy Map</li>
-        <li className={activeSection === 'itinerary' ? 'active' : ''} onClick={() => setActiveSection('itinerary')}>Itinerary</li>
-        <li className={activeSection === 'log' ? 'active' : ''} onClick={() => setActiveSection('log')}>Login/Logoff</li>
+        <Col>
+        <li className={activePage === 'galaxyMap' ? 'active' : ''} onClick={() => setActivePage('galaxyMap')}>Galaxy Map</li>
+        </Col>
+        <Col>
+        <li className={activePage === 'itinerary' ? 'active' : ''} onClick={() => setActivePage('itinerary')}>Itinerary</li>
+        </Col>
+        <Col>
+        <li className={activePage === 'log' ? 'active' : ''} onClick={() => setActivePage('log')}>Login/Logoff</li>
+        </Col>
       </ul>
     </nav>
+</Row>
+    </Container>    
   );
 }
 
