@@ -20,18 +20,19 @@ module.exports = {
     async createVoyage(req, res) {
         try {
             // find a user and update their voyages array
-            const voyage = await User.findOneAndUpdate(
+            const usersVoyage = await User.findOneAndUpdate(
                 { _id: req.params.userId },
                 { $addToSet: { voyages: req.body } },
                 { runValidators: true, new: true }
             );
-            if (!voyage) {
+            if (!usersVoyage) {
                 return res.status(404).json({ message: 'no user found please sign in or try again!' });
             }
-            res.json(voyage);
+            res.json({ message: 'your voyage has been created!', user: usersVoyage });
 
         } catch (error) {
-            
+            console.log(error);
+            res.status(500).json(error);
         }
     },
     // remove the voyage from the users list of voyages if they delete it
