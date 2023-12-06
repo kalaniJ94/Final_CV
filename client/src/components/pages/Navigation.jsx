@@ -15,7 +15,7 @@ function Navigation({ setActivePage, activePage }) {
         <li className={activePage === 'galaxyMap' ? 'active' : ''} onClick={() => setActivePage('galaxyMap')}>Galaxy Map</li>
         </Col>
         <Col>
-        <li className={activePage === 'itinerary' ? 'active' : ''} onClick={() => setActivePage('itinerary')}>Itinerary</li>
+        <li className={activePage === 'itinerary' ? 'active' : ''} onClick={() => setActivePage('itinerary')}> Your Itinerary</li>
         </Col>
         <Col>
         <li className={activePage === 'log' ? 'active' : ''} onClick={() => setActivePage('log')}>Login/Logoff</li>
