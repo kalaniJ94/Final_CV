@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Row, Col, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { Navbar, Row, Col, Nav, Container, Button, Form } from 'react-bootstrap';
 
 import SignUpForm from '../SignupForm';
 import LoginForm from '../LoginForm';
@@ -13,7 +13,13 @@ function LandingPage() {
     <Container id="headerContainer">
     <Row className="flex" >
         <header className="flex-row mt-100">
+            <div>
             <h1 >Welcome to Celestial Voyages!</h1>
+            </div>
+            <div id="forms">
+            <LoginForm id="loginForm"></LoginForm>
+            <SignUpForm id="signupForm"></SignUpForm>
+            </div>
         </header>
     </Row>
     </Container>
