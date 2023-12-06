@@ -13,12 +13,13 @@ function App() {
 
   const renderSection = () => {
     switch (activeSection) {
-      case 'LandingPage':
-        return <LandingPage />;
+      case 'GalaxyMap':
+        return <GalaxyMap />;
       case 'chosenSection':
         return <ChosenSection />;
-      default:
-        return <GalaxyMap />;
+      default:        
+      return <LandingPage />;
+
     }
   };
   return (
