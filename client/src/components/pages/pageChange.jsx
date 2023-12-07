@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 import GalaxyMap from './GalaxyMap';
 import VoyagePage from './VoyagePage';
 
-export default function pageNavigate(){
+export default function PageNavigate(){
     const [activePage, setActivePage] = useState('GalaxyMap');
 
     const renderPage = () => {

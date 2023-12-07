@@ -9,6 +9,7 @@ const {
     deleteUser
 } = require('../../controllers/userControllers');
 
+const { authMiddleware } = require('../../utils/auth')
 // routes
 // https://localhost:3001/api/profile
 router.route('/').post(createUser);

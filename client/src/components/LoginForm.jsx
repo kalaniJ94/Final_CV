@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-// import { loginUser } from '../utils/API';
+import { loginUser } from '../utils/API';
 // need to finish
 import Auth from '../utils/auth.js';
 
