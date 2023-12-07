@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,6 +10,10 @@ import LandingPage from './components/pages/LandingPage';
 
 function App() {
   const [activeSection, setActiveSection] = useState('LandingPage');
+
+  useEffect(() => {
+    document.title = "Celestial Voyages"
+ }, []);
 
   const renderSection = () => {
     switch (activeSection) {
