@@ -6,6 +6,7 @@ const { model } = require('mongoose');
 const {
     createUser,
     loginUser,
+    logoutUser,
     deleteUser,
 } = require('../../controllers/userControllers');
 
@@ -15,6 +16,8 @@ const { authMiddleware } = require('../../utils/auth')
 router.route('/login').post(loginUser);
 // https://localhost:3001/api/user
 router.route('/').post(createUser);
+// https://localhost:3001/api/user/logout
+router.route('/logout').post(logoutUser);
 // https://localhost:3001/api/user/:userId
 router.route('/:userId').delete(deleteUser);
 
