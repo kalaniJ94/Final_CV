@@ -19,10 +19,13 @@ function App() {
 
   return (
     <>
-    <LandingPage id="LandingPage"></LandingPage>
-    <Footer />
+  <header>
+  <img className= "logoStyle" src={logo} alt="Celestial Vogages logo" />
+
+  </header>
+      <Outlet/>
+      <Footer/>  
     </>
-  // </div>
   );
 }
 
