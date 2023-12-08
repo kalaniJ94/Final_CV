@@ -16,12 +16,22 @@
 
 *{
   color: white;
+  /* background-image: url('./assets/images/landingpage.png'); */
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
   display: flex;
   width: 100%;
   height: 100%;
+ background-image: url('./assets/images/landingpage.png');
+}
+#root{
+  height: 100%;
+  width: 100%;
 }
 header{
   width: 100%;
@@ -30,13 +40,14 @@ header{
 }
 
 #headerContainer{
-margin-bottom: 200px;
+margin-bottom: 400px;
 margin-top: 35px;
 height: 75px;
 color: white;
-
 }
-
+#pTag{
+  margin-bottom: 125px;
+}
 #forms{
   width: 33%;
   display: flex;
@@ -44,3 +55,6 @@ color: white;
 
 }
 
+#footer{
+  margin-bottom: -1px;
+}
