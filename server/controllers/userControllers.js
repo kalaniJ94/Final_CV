@@ -2,6 +2,7 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const secret = 'testSecret';
 
 module.exports = {
     // create user
@@ -41,13 +42,16 @@ module.exports = {
             }
 
             // create token using jwt sign in method 
-            const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '2h' });
-            // add token to user
-            user.tokens = user.tokens.concat({ token });
+            const token = jwt.sign({ _id: user._id,username: user.username, email: user.email }, 'testSecret', { expiresIn: '2h' });
+
+            // console.log(jwt.decode(token));
+            jwt.verify(token, )
+
             // save user
-            await user.save();
+            // await user.save();
             // send token to client
             res.status(200).json({ token });
+            // res.status(200).json({ token, user: { _id: user._id, username: user.username, email: user.email } });
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
