@@ -21,6 +21,8 @@ module.exports = {
             // create user
             const user = await User.create({ username, email, password: cryptPassword });
             console.log("user created successfully");
+            // return user
+            res.status(200).json(user);
 
         } catch (err) {
             console.log(err);
