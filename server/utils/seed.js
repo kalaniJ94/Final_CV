@@ -1,5 +1,6 @@
 const connection = require("../config/connection");
 const Planet = require("../models/planet");
+const Voyage = require("../models/voyage");
 const fs = require("fs");
 const path = require("path");
 
@@ -72,10 +73,49 @@ const seedPlanets = [
     image: readImageFile(path.join(__dirname, "../../server/assets/images/planet12.png")),  },
 ];
 
+// seeding planets into voyages
+const seedVoyages = [
+  {
+    title: "Celestial Odyssey",
+    price: 1000000,
+    startDate: new Date("2024-10-01"),
+    endDate: new Date("2024-11-15"),
+    destinations: []
+  },
+  {
+    title: "Galactic Getaway",
+    price: 5000000,
+    startDate: new Date("2025-01-01"),
+    endDate: new Date("2025-02-15"),
+    destinations: []
+  },
+  {
+    title: "Cosmic Ascension",
+    price: 7500000,
+    startDate: new Date("2024-04-01"),
+    endDate: new Date("2024-05-15"),
+  },
+  {
+    title: "Interstellar Excursion",
+    price: 25000000,
+    startDate: new Date("2024-07-01"),
+    endDate: new Date("2024-09-15"),
+    destinations: []
+  },
+  {
+    title: "Solar Serenity",
+    price: 10000000,
+    startDate: new Date("2024-12-01"),
+    endDate: new Date("2025-01-15"),
+    destinations: []
+  }
+];
+
 connection.once("open", async () => {
   console.log("Connected to MongoDB");
 
   try {
+    // seed planets
     for (const seedPlanet of seedPlanets) {
       const existingPlanet = await Planet.findOne({ planetName: seedPlanet.planetName });
       if (!existingPlanet) {
@@ -88,6 +128,15 @@ connection.once("open", async () => {
     }
     console.log('Seeding completed.');
     connection.close();
+
+    // seed voyages with references to planets
+    for (const seedVoyage of seedVoyages) {
+      const planets = await Planet.find({});
+      seedVoyage.destinations = planets.map((planet) => planet._id);
+      const newVoyage = new Voyage(seedVoyage);
+      await newVoyage.save();
+      console.log(`Voyage successfully seeded: ${seedVoyage.title}`);
+    }
   } catch (err) {
     console.error('Error during seeding:', err);
     connection.close();

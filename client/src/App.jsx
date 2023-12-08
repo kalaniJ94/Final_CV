@@ -19,12 +19,14 @@ function App() {
 
   return (
     <>
-  <header>
-  <img className= "logoStyle" src={logo} alt="Celestial Vogages logo" />
 
-  </header>
-      <Outlet/>
-      <Footer/>  
+    <StrictMode>
+    <header>
+      <img className= "logoStyle" src={logo} alt="Celestial Vogages logo" />
+    </header>
+    <Outlet />
+    </StrictMode>
+
     </>
   );
 }
