@@ -4,7 +4,7 @@ import { Navbar, Row, Col, Nav, Container, Button, Form } from 'react-bootstrap'
 import SignUpForm from '../SignupForm';
 import LoginForm from '../LoginForm';
 
-import Auth from '../../utils/auth.js';
+import auth from '../../utils/auth.js';
 
 
 function LandingPage() {

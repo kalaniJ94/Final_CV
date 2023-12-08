@@ -1,4 +1,5 @@
 //beginning of routes to ensure login/signup functionality
+
 //needed?
 export const getMe = (token) => {
     return fetch('/api/profile/me', {
