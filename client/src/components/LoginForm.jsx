@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
 import { loginUser } from '../utils/API';
+// import { loginUserServer } from '../../../server/utils/auth.js';
 // need to finish
 import Auth from '../utils/auth.js';
 
@@ -21,25 +22,31 @@ const LoginForm = () => {
       if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
+        validated(true);
+      
       }
   
       try {
+        console.log(0);
         const response = await loginUser(userFormData);
-  
-        if (!response.ok) {
+        console.log(response);
+        console.log(userFormData);
+  console.log(1);
+  // console.log(token);
+        if (response.status !== 200) {
           throw new Error('something went wrong!');
         }
-  
+  console.log(2);
         const { token, user } = await response.json();
         console.log(user);
         Auth.login(token);
       } catch (err) {
         console.error(err);
+
         setShowAlert(true);
       }
   
       setUserFormData({
-        username: '',
         email: '',
         password: '',
       });

@@ -11,7 +11,7 @@ export const getMe = (token) => {
   };
 //signup
   export const createUser = (userData) => {
-    return fetch('/api/profile', {
+    return fetch('/api/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,11 +20,13 @@ export const getMe = (token) => {
     });
   };
   //login
-  export const loginUser = (userData) => {
-    return fetch('/api/profile/login', {
+  export const loginUser = (userData, ) => {
+    return fetch('/api/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        // Authorization: `Bearer ${token}`,
+
       },
       body: JSON.stringify(userData),
     });
