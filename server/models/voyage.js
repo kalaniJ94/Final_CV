@@ -1,5 +1,5 @@
 // schema for the voyage model
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 const voyageSchema = new Schema(
     {
