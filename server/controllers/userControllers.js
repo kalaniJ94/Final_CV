@@ -33,15 +33,15 @@ module.exports = {
     // get user by login credentials using jwt
     async loginUser(req, res) {
         try {
-            const { username, password } = req.body;
+            const { email, password } = req.body;
             // check if user exists
-            const user = await User.findOne({ username });
+            const user = await User.findOne({ email });
             const validPassword = await bcrypt.compare(password, user.password);
             if (!user || !validPassword) {
                 return res.status(400).json({ message: 'Invalid username or password' });
             }
             // create token using jwt sign in method 
-            const token = jwt.sign({ _id: user._id,username: user.username, email: user.email }, secret, { expiresIn: '2h' });
+            const token = jwt.sign({ _id: user._id, email: user.email }, secret, { expiresIn: '2h' });
             // send token to client
             res.status(200).json({ token });
             // res.status(200).json({ token, user: { _id: user._id, username: user.username, email: user.email } });
