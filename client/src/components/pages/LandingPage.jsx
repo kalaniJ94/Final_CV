@@ -4,7 +4,7 @@ import { Navbar, Row, Col, Nav, Container, Button, Form } from 'react-bootstrap'
 import SignUpForm from '../SignupForm';
 import LoginForm from '../LoginForm';
 
-import Auth from '../../utils/auth.js';
+import auth from '../../utils/auth.js';
 
 
 function LandingPage() {
@@ -23,7 +23,7 @@ function LandingPage() {
         </header>
     </Row>
     </Container>
-    <Container >
+    <Container id="pTag">
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis perferendis harum, delectus nam deserunt molestiae voluptates reiciendis fuga eaque dolorem eius error porro sint itaque eos, earum qui beatae.
         </p>

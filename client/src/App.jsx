@@ -15,27 +15,31 @@ function App() {
     document.title = "Celestial Voyages"
  }, []);
 
-  const renderSection = () => {
-    switch (activeSection) {
-      case 'GalaxyMap':
-        return <GalaxyMap />;
-      case 'chosenSection':
-        return <ChosenSection />;
-      default:        
-      return <LandingPage />;
+  // const renderSection = () => {
+  //   switch (activeSection) {
+  //     case 'GalaxyMap':
+  //       return <GalaxyMap />;
+  //     case 'chosenSection':
+  //       return <ChosenSection />;
+  //     default:        
+  //     return <LandingPage />;
 
-    }
-  };
+  //   }
   return (
-    <div className='pageContainer'>
-    <Navigation setActiveSection={setActiveSection} />
-    <main className='contentWrap'>
-      {renderSection()}
-    </main>
+    // <div className='pageContainer'>
+    // <Navigation setActiveSection={setActiveSection} />
+    // <main className='contentWrap'>
+    //   {renderSection()}
+    // </main>
+    <>
+    <LandingPage id="LandingPage"></LandingPage>
     <Footer />
-  </div>
-);
-  
+    </>
+  // </div>
+  );
 }
+
+  
+
 
 export default App;
