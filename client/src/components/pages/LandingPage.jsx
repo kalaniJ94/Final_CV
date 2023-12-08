@@ -1,13 +1,21 @@
-import React from "react";
-import { Navbar, Row, Col, Nav, Container, Button, Form } from 'react-bootstrap';
+import React, {useState} from "react";
+import { Row, Container, } from 'react-bootstrap';
+
+import { useEffect } from "react";
 
 import SignUpForm from '../SignupForm';
 import LoginForm from '../LoginForm';
+import { useNavigate } from 'react-router-dom';
 
-import auth from '../../utils/auth.js';
+const LandingPage = () => {
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const navigate = useNavigate();
 
-
-function LandingPage() {
+    const handleLogin = () => {
+        console.log('handleLogin called');
+        setLoggedIn(true);
+        navigate('/galaxyMap');
+    };
     return (
         <>
     <Container id="headerContainer">
@@ -17,8 +25,8 @@ function LandingPage() {
             <h1 >Welcome to Celestial Voyages!</h1>
             </div>
             <div id="forms">
-            <LoginForm id="loginForm"></LoginForm>
-            <SignUpForm id="signupForm"></SignUpForm>
+            <LoginForm id="loginForm" onLogin={handleLogin}/>
+            <SignUpForm id="signupForm"/>
             </div>
         </header>
     </Row>
@@ -32,6 +40,6 @@ function LandingPage() {
 
         </>
     )
-}
+};
 
 export default LandingPage;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -21,11 +22,11 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: 'galaxyMap',
+        path: '/galaxyMap',
         element: <GalaxyMap />,
       },
       {
-        path: 'voyages',
+        path: '/voyages',
         element: <VoyagePage/>
       }
     ],

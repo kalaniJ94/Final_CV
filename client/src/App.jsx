@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { React, useState, useEffect, StrictMode } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Outlet } from 'react-router-dom';
 
 import Navigation from './components/pages/Navigation';
 import GalaxyMap from './components/pages/GalaxyMap';
@@ -16,10 +18,10 @@ function App() {
 
   return (
     <>
-    <LandingPage id="LandingPage"></LandingPage>
-    <Footer />
+    <StrictMode>
+    <Outlet />
+    </StrictMode>
     </>
-  // </div>
   );
 }
 
