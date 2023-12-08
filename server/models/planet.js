@@ -1,5 +1,5 @@
 // schema fro planet model
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 const planetSchema = new Schema(
     {
