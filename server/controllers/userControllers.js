@@ -54,6 +54,19 @@ module.exports = {
         }
     },
 
+    // logout user
+    async logoutUser(req, res) {
+        try {
+            // remove token from client
+            const token = req.headers.authorization.split(' ')[1];
+            revokedTokens.push(token);
+            res.status(200).json({ message: 'User logged out successfully!' });
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    },
+
     // delete user by id
     async deleteUser(req, res) {
         try {
