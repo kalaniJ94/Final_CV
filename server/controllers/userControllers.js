@@ -41,7 +41,9 @@ module.exports = {
                 return res.status(400).json({ message: 'Invalid username or password' });
             }
             // create token using jwt sign in method 
-            const token = jwt.sign({ _id: user._id, username: user.username, email: user.email }, secret, { expiresIn: '2h' });
+
+            const token = jwt.sign({ _id: user._id, email: user.email }, secret, { expiresIn: '2h' });
+
             // send token to client
             console.log("token created successfully: ", token);
             res.status(200).json({ token });
