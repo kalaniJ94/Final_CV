@@ -20,7 +20,8 @@ module.exports = {
       req.user = data;
     } catch (error) {
       console.error('Token verification error:', error.message);
-      return res.status(400).json({ message: 'Invalid token!' });
+      // the 401 status number means unauthorized
+      return res.status(401).json({ message: 'Invalid token!' });
     }
 
     next();
