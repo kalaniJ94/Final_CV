@@ -1,5 +1,5 @@
 // mongoose imports
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types} = require('mongoose');
 
 // Schema to create the user model
 const userSchema = new Schema(
