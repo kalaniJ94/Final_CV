@@ -15,3 +15,5 @@ router.route('/:voyageId').get(getVoyage);
 router.route('/:userId').post(createVoyage);
 // https://localhost:3001/api/voyage/:userId/:voyageId
 router.route('/:userId/:voyageId').delete(deleteVoyage);
+
+module.exports = router;
