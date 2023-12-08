@@ -72,18 +72,24 @@ const seedPlanets = [
     image: readImageFile(path.join(__dirname, "../../server/assets/images/planet12.png")),  },
 ];
 
-connection.once("open", () => {
-  console.log("connected to mongodb");
-  Planet.deleteMany({})
-    .then(() => Planet.collection.insertMany(seedPlanets))
-    .then((data) => {
-      console.log(data.result.n + " records inserted!");
-      connection.close(); // Close the MongoDB connection
-      process.exit(0);
-    })
-    .catch((err) => {
-      console.error(err);
-      connection.close(); // Close the MongoDB connection in case of an error
-      process.exit(1);
-    });
+connection.once("open", async () => {
+  console.log("Connected to MongoDB");
+
+  try {
+    for (const seedPlanet of seedPlanets) {
+      const existingPlanet = await Planet.findOne({ planetName: seedPlanet.planetName });
+      if (!existingPlanet) {
+        const newPlanet = new Planet(seedPlanet);
+        await newPlanet.save();
+        console.log(`Inserted planet: ${seedPlanet.planetName}`);
+      } else {
+        console.log(`Planet already exists: ${seedPlanet.planetName}`);
+      }
+    }
+    console.log('Seeding completed.');
+    connection.close();
+  } catch (err) {
+    console.error('Error during seeding:', err);
+    connection.close();
+  }
 });
