@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { React, useState, useEffect, StrictMode } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Outlet } from 'react-router-dom';
 
 import Navigation from './components/pages/Navigation';
 import GalaxyMap from './components/pages/GalaxyMap';
@@ -17,14 +19,14 @@ function App() {
 
   return (
     <>
-    <body>
+
+    <StrictMode>
     <header>
       <img className= "logoStyle" src={logo} alt="Celestial Vogages logo" />
     </header>
-      
-    <LandingPage id="LandingPage"></LandingPage>
-    </body>
-    <Footer />
+    <Outlet />
+    </StrictMode>
+
     </>
   );
 }
