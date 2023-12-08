@@ -7,13 +7,12 @@ const {
     createUser,
     loginUser,
     deleteUser,
-    me
 } = require('../../controllers/userControllers');
 
 const { authMiddleware } = require('../../utils/auth')
 // routes
 // https://localhost:3001/api/user/login
-router.route('/login').get(loginUser);
+router.route('/login').post(loginUser);
 // https://localhost:3001/api/user
 router.route('/').post(createUser);
 // https://localhost:3001/api/user/:userId
