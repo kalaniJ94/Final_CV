@@ -3,3 +3,15 @@
   background-size: cover;
 }
 
+header{
+  width: 100%;
+
+}
+
+.logoStyle {
+  width: 200px;
+  height: 200px;
+  position: absolute; /* Or 'relative' if positioning within the header */
+  top: 0;
+  left: 0;
+}

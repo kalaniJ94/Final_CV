@@ -9,6 +9,7 @@ import GalaxyMap from './components/pages/GalaxyMap';
 import ChosenSection from './components/pages/ChosenSection';
 import Footer from './components/pages/Footer'; 
 import LandingPage from './components/pages/LandingPage';
+import logo from './assets/images/logo.png';
 
 function App() {
 
@@ -18,9 +19,14 @@ function App() {
 
   return (
     <>
+
     <StrictMode>
+    <header>
+      <img className= "logoStyle" src={logo} alt="Celestial Vogages logo" />
+    </header>
     <Outlet />
     </StrictMode>
+
     </>
   );
 }
