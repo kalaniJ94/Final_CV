@@ -2,8 +2,6 @@ const jwt = require('jsonwebtoken');
 
 const secret = 'test_secret';
 const expiration = '2h';
-// store the revoked tokens
-const revokedTokens = new Set();
 
 module.exports = {
   authMiddleware: function (req, res, next) {
@@ -14,7 +12,7 @@ module.exports = {
     }
 
     // if there is no token, or if the token has been removed, deny access
-    if (!token || revokedTokens.has(token)) {
+    if (!token) {
       return res.status(400).json({ message: 'Your session has expired' });
     }
 
