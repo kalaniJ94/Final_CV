@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const secret = 'test_secret';
 
+// import revoked tokens
+const { revokedTokens } = require('../utils/auth');
+
 module.exports = {
     // create user
     async createUser(req, res) {
