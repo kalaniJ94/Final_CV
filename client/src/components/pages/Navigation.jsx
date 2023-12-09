@@ -21,7 +21,10 @@ function Navigation({ activePage, setActivePage }) {
           className= {activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}
           >Voyages</a>
     </li>
-    Insert a logout button here
+    <button>
+      logout 
+    </button>
+
   </ul>
 
     </Container>    

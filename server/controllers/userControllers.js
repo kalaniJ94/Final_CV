@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const secret = 'test_secret';
 
+// import revoked tokens
+const { revokedTokens } = require('../utils/auth');
+
 module.exports = {
     // create user
     async createUser(req, res) {
@@ -48,19 +51,6 @@ module.exports = {
             console.log("token created successfully: ", token);
             res.status(200).json({ token });
             // res.status(200).json({ token, user: { _id: user._id, username: user.username, email: user.email } });
-        } catch (err) {
-            console.log(err);
-            res.status(500).json(err);
-        }
-    },
-
-    // logout user
-    async logoutUser(req, res) {
-        try {
-            // remove token from client
-            const token = req.headers.authorization.split(' ')[1];
-            revokedTokens.push(token);
-            res.status(200).json({ message: 'User logged out successfully!' });
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
