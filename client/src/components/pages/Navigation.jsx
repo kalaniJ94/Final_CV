@@ -41,6 +41,8 @@ const LogoutForm = ({ onLogout }) => {
 function Navigation({ activePage, setActivePage }) {
   return (
     <Container>
+      <Row>
+
   <ul className='nav nav-tabs'>
     <li className='nav-item'>
       <a href='/galaxyMap'
@@ -56,6 +58,7 @@ function Navigation({ activePage, setActivePage }) {
     </li>
     <LogoutForm/>
   </ul>
+          </Row>
 
     </Container>    
   );
