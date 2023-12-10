@@ -1,12 +1,47 @@
-import React from 'react';
+import {React, useState} from 'react';
 
-import Container from 'react-bootstrap/Container';
+import {Container, Button} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import AuthService from '../../utils/auth.js';
+
+const LogoutForm = ({ onLogout }) => {
+  const [validated, setValidated] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      setValidated(true);
+      return;
+    }
+
+    try {
+      await AuthService.logout();
+      if (onLogout) {
+        onLogout();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (
+    <Container>
+      <form noValidate  onSubmit={handleFormSubmit}>
+       
+        <button type="submit">Logout</button>
+      </form>
+    </Container>
+  );
+};
 
 function Navigation({ activePage, setActivePage }) {
   return (
     <Container>
+      <Row>
 
   <ul className='nav nav-tabs'>
     <li className='nav-item'>
@@ -21,11 +56,11 @@ function Navigation({ activePage, setActivePage }) {
           className= {activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}
           >Voyages</a>
     </li>
-    <button>
-      logout 
-    </button>
+
+    <LogoutForm/>
 
   </ul>
+          </Row>
 
     </Container>    
   );

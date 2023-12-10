@@ -24,7 +24,7 @@ const LandingPage = () => {
     <Row className="flex" >
         <header className="flex-row mt-100">
             <div>
-      <img className= "logoStyle" src={logo} alt="Celestial Vogages logo" />
+      <img className= "logoStyle" src={logo} alt="Celestial Voyages logo" />
 
             <h1 >Welcome to Celestial Voyages!</h1>
             </div>

@@ -31,10 +31,9 @@ class AuthService {
     localStorage.setItem('id_token', idToken);
     window.location.assign('/galaxyMap');
   }
-// TODO window.location should point to the galaxy map upon logging in
 
-  logout() {
-    localStorage.removeItem('id_token');
+  logout(idToken) {
+    localStorage.removeItem('id_token', idToken);
     window.location.assign('/');
   }
 }
