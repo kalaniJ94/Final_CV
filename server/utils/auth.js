@@ -11,8 +11,9 @@ module.exports = {
       token = token.split(' ').pop().trim();
     }
 
+    // if there is no token, or if the token has been removed, deny access
     if (!token) {
-      return res.status(400).json({ message: 'You have no token!' });
+      return res.status(400).json({ message: 'Your session has expired' });
     }
 
     try {
@@ -30,5 +31,9 @@ module.exports = {
     const payload = { username, email, _id };
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+  },
+  // remove token from client
+  revokeToken: function ({ token }) {
+    revokedTokens.add(token);
   },
 };
