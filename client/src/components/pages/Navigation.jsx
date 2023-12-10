@@ -57,6 +57,7 @@ function Navigation({ activePage, setActivePage }) {
           >Voyages</a>
     </li>
     <LogoutForm/>
+
   </ul>
           </Row>
 
