@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     document.title = 'Celestial Voyages';
 
+    // adds the cute little icon to the tab in the browser
     const link = document.querySelector("link[rel~='icon']");
     if (!link) {
       const newLink = document.createElement('link');
