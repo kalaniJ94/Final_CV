@@ -54,28 +54,73 @@ color: white;
 
 }
 
+.introMap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5%;
+  color: #19cbeb;
+}
+
 footer{
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-/* Map section */
-
-#bigContainer{
-
-  margin: 0;
-  width: 100%;
-
-  display: inline-flex;
+#bigContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; 
+  position: relative;
+  margin: auto; 
 }
-#galaxyMap{
-  width: 75%;
-  height: 65%;
-border-radius: 10%;
 
+#galaxyMap {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10%;
+  margin: auto; /* Center the image */
 }
-#planetCards{
+
+.planetButton {
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.planetPhoto {
+  position: absolute;
+  max-width: 80px;
+  max-height: 80px;
+  transition: all 0.3s ease;
+  border-radius: 50%; 
+}
+
+.planetPhoto:hover {
+  box-shadow: 0 0 15px 10px rgba(236, 24, 166, 0.7); 
+}
+
+/* planet positions */
+.planet1 { top: 10%; left: 0%; }
+.planet2 { top: 20%; left: 30%; }
+.planet3 { top: 40%; left: 40%; }
+.planet4 { top: 10%; left: 50%; }
+.planet5 { top: 15%; left: 80%; }
+.planet6 { top: 70%; left: 30%; }
+.planet7 { top: 90%; left: 0%; }
+.planet8 { top: 80%; left: 50%; }
+.planet9 { top: 80%; left: 80%; }
+.planet10 { top: 50%; left: 90%; }
+.planet11 { top: 60%; left: 10%; }
+.planet12 { top: 50%; left: 50%; }
+
+/* #planetCards{
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -89,7 +134,7 @@ border-radius: 10%;
 }
 #planetImg{
   height:275px
-}
+} */
 
 @media only screen and (max-width: 600px) {
   #bigContainer{

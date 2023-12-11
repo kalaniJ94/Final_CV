@@ -1,34 +1,43 @@
-import { React, useState, useEffect, StrictMode } from 'react';
+import React, { useState, useEffect, StrictMode } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Outlet } from 'react-router-dom';
+import AuthService from './utils/auth'; 
 
-import Navigation from './components/pages/Navigation';
-import GalaxyMap from './components/pages/GalaxyMap';
-import ChosenSection from './components/pages/ChosenSection';
-import Footer from './components/pages/Footer'; 
-import LandingPage from './components/pages/LandingPage';
-import logo from './assets/images/logo.png';
+import background1 from "./assets/images/landingpage.png"; 
+import background2 from "./assets/images/background1.png"; 
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(AuthService.loggedIn());
 
   useEffect(() => {
-    document.title = "Celestial Voyages"
- }, []);
+    document.title = "Celestial Voyages";
+
+    const updateLoginStatus = () => setIsLoggedIn(AuthService.loggedIn());
+
+    window.addEventListener('storage', updateLoginStatus);
+
+    return () => {
+      window.removeEventListener('storage', updateLoginStatus);
+    };
+  }, []);
+
+  const backgroundStyle = {
+    backgroundImage: `url(${isLoggedIn ? background2 : background1})`,
+    width: '100%',
+    height: '100vh',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
 
   return (
-    <>
-
-    <StrictMode>
-    <Outlet />
-    </StrictMode>
-
-    </>
+    <div style={backgroundStyle}>
+      <StrictMode>
+        <Outlet />
+      </StrictMode>
+    </div>
   );
 }
-
-  
-
 
 export default App;
