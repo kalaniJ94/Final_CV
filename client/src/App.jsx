@@ -9,12 +9,23 @@ import Footer from './components/pages/Footer';
 
 import background1 from "./assets/images/landingpage.png"; 
 import background2 from "./assets/images/background1.png"; 
+import logo from "./assets/images/favicon.ico";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(AuthService.loggedIn());
 
   useEffect(() => {
-    document.title = "Celestial Voyages";
+    document.title = 'Celestial Voyages';
+
+    const link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      const newLink = document.createElement('link');
+      newLink.rel = 'icon';
+      newLink.href = logo;
+      document.head.appendChild(newLink);
+    } else {
+      link.href = logo;
+    }
 
     const updateLoginStatus = () => setIsLoggedIn(AuthService.loggedIn());
 
