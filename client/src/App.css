@@ -1,9 +1,11 @@
+/* Landing page styles */
 * {
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 header{
+  padding: 3%;
   width: 100%;
 
 }
@@ -14,4 +16,35 @@ header{
   position: absolute; /* Or 'relative' if positioning within the header */
   top: 0;
   left: 0;
+}
+
+.voyageButtonContainer{
+  padding-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+#formsContainer {
+  max-width: 20%;
+}
+
+.loginBtn {
+  background-color: rgb(136, 74, 207) !important; 
+  border: solid 1px rgb(236, 26, 173) !important;
+}
+
+.signUpBtn {
+  background-color: rgb(136, 74, 207) !important; 
+  border: solid 1px rgb(236, 26, 173) !important;
+}
+
+.beginVoyageBtn.btn {
+  background-color: rgb(136, 74, 207);
+  border: solid 1px rgb(236, 26, 173); 
+}
+
+.planetButton {
+  border: transparent !important;
+  background-color: transparent !important;
 }

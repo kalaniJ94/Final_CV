@@ -1,9 +1,11 @@
 import React, { useState, useEffect, StrictMode } from 'react';
 import './App.css';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Outlet } from 'react-router-dom';
 import AuthService from './utils/auth'; 
+import Footer from './components/pages/Footer';
 
 import background1 from "./assets/images/landingpage.png"; 
 import background2 from "./assets/images/background1.png"; 
@@ -29,6 +31,7 @@ function App() {
     height: '100vh',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    
   };
 
   return (
@@ -36,6 +39,7 @@ function App() {
       <StrictMode>
         <Outlet />
       </StrictMode>
+      <Footer />
     </div>
   );
 }
