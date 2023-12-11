@@ -63,14 +63,17 @@ footer{
 /* Map section */
 
 #bigContainer{
-max-width: 1320px;
+
+  margin: 0;
+  width: 100%;
+
   display: inline-flex;
 }
 #galaxyMap{
   width: 75%;
   height: 65%;
 border-radius: 10%;
-margin: 0px 130px 0px 50px;
+
 }
 #planetCards{
   display: flex;
@@ -122,3 +125,4 @@ margin: 0px 130px 0px 50px;
     margin-top: 0px;
   }
 }
+
