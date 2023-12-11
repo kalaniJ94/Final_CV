@@ -29,8 +29,8 @@ return (
     <div>
         <Navigation />
         <Container className="introMap">
-            <h1>GalaxyMap</h1>
-            <h2>Select a Planet to add to Voyage</h2>
+            <h1>Galaxy Destinations</h1>
+            <h2>Select a planet to add to your voyage</h2>
         </Container>
         <Container id="bigContainer">
             <Button className="planetButton planet1" onClick={() => handlePlanetClick('Planet 1')}>

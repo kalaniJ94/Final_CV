@@ -42,8 +42,18 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 1.5%;
-  color: #19cbeb;
+  margin-top: 1.5%;
+  padding: 2px;
+  color: #FF8C61; 
+  background-color: rgba(248, 242, 244, 0.25); 
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.introMap h2{
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 0px;
 }
 
 #bigContainer {
@@ -97,21 +107,36 @@ header{
 .planet11 { top: 60%; left: 10%; }
 .planet12 { top: 50%; left: 50%; }
 
-/* #planetCards{
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  width: 60%;
+/* navigation */
+
+.logout-container button {
+  /* Styles for the logout button */
+  background-color: transparent;
+  color: #f77b28; 
+  margin-top: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none; 
 }
 
-#planet{
-  margin: 0px 0px 50px 0px;
-  background-color: bisque;
 
+.nav-item {
+  /* Styles for the map and voyages */
+  color: #5C374C !important; 
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none; 
+} 
+
+.nav-link {
+  color: #FF8C61 !important;
 }
-#planetImg{
-  height:275px
-} */
+
+.nav-link:hover {
+  color: #5C374C !important; 
+}
 
 @media only screen and (max-width: 600px) {
   #bigContainer{
