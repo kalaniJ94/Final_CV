@@ -31,6 +31,10 @@ function App() {
     height: '100vh',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    position: 'fixed',
+    top: 0,
+    left: 0,
     
   };
 

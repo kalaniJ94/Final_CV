@@ -27,14 +27,20 @@ const LandingPage = () => {
         <Row className="flex">
           <header className="flex-row mt-100">
             <div>
-              <img
+              <h1 className="landingHeader">Welcome to Celestial Voyages!</h1>
+            <img
                 className="logoStyle"
                 src={logo}
                 alt="Celestial Voyages logo"
               />
-              <h1 className="landingHeader">Welcome to Celestial Voyages!</h1>
             </div>
+            
           </header>
+          <Container id="pTag">
+        <p>
+        Welcome to Celestial Voyages, your portal to the cosmic wonders! Step into a realm where the boundaries of space and imagination merge, offering you an extraordinary opportunity to explore the universe. With Celestial Voyages, embark on a spectacular journey to distant galaxies, witness the majestic dance of planets, and marvel at the tapestry of stars that light up the endless night sky. Our state-of-the-art spacecraft and experienced cosmic guides ensure a safe and mesmerizing adventure tailored to your dreams. The universe is vast and full of wonders waiting to be explored. Join us at Celestial Voyages, where every journey is a step into the extraordinary. Your adventure among the stars starts now!
+        </p>
+      </Container>
         </Row>
         <div className="voyageButtonContainer">
           <Button className="beginVoyageBtn" onClick={toggleForms}>
@@ -50,14 +56,7 @@ const LandingPage = () => {
         </Container>
       )}
 
-      <Container id="pTag">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-          blanditiis perferendis harum, delectus nam deserunt molestiae
-          voluptates reiciendis fuga eaque dolorem eius error porro sint itaque
-          eos, earum qui beatae.
-        </p>
-      </Container>
+      
       
     </>
   );
