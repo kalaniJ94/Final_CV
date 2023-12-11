@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import Navigation from "./Navigation";
 import { Container, Image, Col, Card, Row, Button } from "react-bootstrap";
 
@@ -16,11 +16,16 @@ import planet10 from "../../assets/images/planet10.png";
 import planet11 from "../../assets/images/planet11.png";
 import planet12 from "../../assets/images/planet12.png";
 
-
-
-
-
 function GalaxyMap() {
+const [hoveredPlanet, setHoveredPlanet] = useState(null);
+
+const handlePlanetHover = (planet) => {
+    setHoveredPlanet(planet);
+};
+const handlePlanetLeave = () => {
+    setHoveredPlanet(null);
+} ;
+
     return (
         <div>
             <Navigation />
@@ -30,7 +35,27 @@ function GalaxyMap() {
             <Container id="bigContainer">
                         <Image id="galaxyMap" src={background1} alt="Travel Destinations map" />
                     <div id="planetCards">
-                        <Card id="planet" style={{ width: '20rem', height: '25rem' }}>
+                    {[planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8, planet9, planet10, planet11, planet12].map((planet, index) => (
+            <Card
+              key={index}
+              id="planet"
+              style={{ width: "20rem", height: "25rem" }}
+              onMouseEnter={() => handlePlanetHover(planet)}
+              onMouseLeave={handlePlanetLeave}
+            >
+              <Card.Img
+                id="planetImg"
+                variant="top"
+                src={planet}
+                className={hoveredPlanet === planet ? "glow" : ""}
+              />
+              <Card.Body>
+                <Card.Text>This is a planet.</Card.Text>
+                <Button variant="primary">Book this planet.</Button>
+              </Card.Body>
+            </Card>
+          ))}
+                         {/* <Card id="planet" style={{ width: '20rem', height: '25rem' }}                       >
                             <Card.Img id='planetImg' variant='top' src={planet1} />
                             <Card.Body>
                                 <Card.Text>
@@ -147,8 +172,8 @@ function GalaxyMap() {
                                 </Card.Text>
                                 <Button variant="primary">Book this planet.</Button>
                             </Card.Body>
-                        </Card>
-                    </div>
+                        </Card> */}
+                    </div> 
             </Container>
         </div>
     )

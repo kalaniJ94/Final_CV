@@ -56,7 +56,6 @@ function Navigation({ activePage, setActivePage }) {
           className= {activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}
           >Voyages</a>
     </li>
-
     <LogoutForm/>
 
   </ul>
