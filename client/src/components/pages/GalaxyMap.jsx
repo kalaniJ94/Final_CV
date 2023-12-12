@@ -35,27 +35,8 @@ const handlePlanetLeave = () => {
             <Container id="bigContainer">
                         <Image id="galaxyMap" src={background1} alt="Travel Destinations map" />
                     <div id="planetCards">
-                    {[planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8, planet9, planet10, planet11, planet12].map((planet, index) => (
-            <Card
-              key={index}
-              id="planet"
-              style={{ width: "20rem", height: "25rem" }}
-              onMouseEnter={() => handlePlanetHover(planet)}
-              onMouseLeave={handlePlanetLeave}
-            >
-              <Card.Img
-                id="planetImg"
-                variant="top"
-                src={planet}
-                className={hoveredPlanet === planet ? "glow" : ""}
-              />
-              <Card.Body>
-                <Card.Text>This is a planet.</Card.Text>
-                <Button variant="primary">Book this planet.</Button>
-              </Card.Body>
-            </Card>
-          ))}
-                         {/* <Card id="planet" style={{ width: '20rem', height: '25rem' }}                       >
+           
+                          <Card id="planet" style={{ width: '20rem', height: '25rem' }}                       >
                             <Card.Img id='planetImg' variant='top' src={planet1} />
                             <Card.Body>
                                 <Card.Text>
@@ -172,8 +153,8 @@ const handlePlanetLeave = () => {
                                 </Card.Text>
                                 <Button variant="primary">Book this planet.</Button>
                             </Card.Body>
-                        </Card> */}
-                    </div> 
+                        </Card>                    
+                        </div> 
             </Container>
         </div>
     )

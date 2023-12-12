@@ -3,6 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Outlet } from 'react-router-dom';
+import { AuthProvider } from './components/AuthContext.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
 
 import Navigation from './components/pages/Navigation';
 import GalaxyMap from './components/pages/GalaxyMap';
@@ -19,11 +21,13 @@ function App() {
 
   return (
     <>
+<AuthProvider>
 
     <StrictMode>
     <Outlet />
     </StrictMode>
 
+</AuthProvider>
     </>
   );
 }
