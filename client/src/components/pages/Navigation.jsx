@@ -48,18 +48,26 @@ function Navigation({ activePage, setActivePage }) {
 
         <Col xs="auto">
           <ul className='nav nav-tabs'>
+          <li className='nav-item'>
+              <a href='/voyages'
+                  onClick={() => setActivePage('voyages')}
+                  className={activePage === 'voyages' ? 'nav-link active' : 'nav-link'}>
+                  Voyage Packages
+              </a>
+            </li>
             <li className='nav-item'>
               <a href='/galaxyMap'
                   onClick={() => setActivePage('galaxyMap')}
                   className={activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}>
-                  Galaxy Map
+                  Premium Voyage
               </a>
             </li>
+           
             <li className='nav-item'>
-              <a href='/voyages'
-                  onClick={() => setActivePage('voyages')}
-                  className={activePage === 'voyages' ? 'nav-link active' : 'nav-link'}>
-                  Voyages
+              <a href='/basicVoyage'
+                  onClick={() => setActivePage('basicVoyage')}
+                  className={activePage === 'basicVoyage' ? 'nav-link active' : 'nav-link'}>
+                  Basic Voyage
               </a>
             </li>
           </ul>
