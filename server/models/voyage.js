@@ -23,7 +23,7 @@ const voyageSchema = new Schema(
             required: true
         },
         destinations: [{
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'Planet'
         }],
     },
