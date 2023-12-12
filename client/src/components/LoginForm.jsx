@@ -50,7 +50,7 @@ const LoginForm = ({ onLogin }) => {
 
   return (
     <>
-    <div className='logInForm'>
+    <div className='logInForm scrollable-container'>
     <h1>Log In</h1>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>

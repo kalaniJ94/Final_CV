@@ -48,7 +48,7 @@ const SignupForm = () => {
 
   return (
     <>
-    <div className='signUpForm'>
+    <div className='signUpForm scrollable-container'>
     <h1>Sign Up</h1>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>

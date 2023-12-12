@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
 header {
   text-align: center; /* Center everything within the header */
   padding: 3%;
@@ -16,10 +21,9 @@ header {
   display: flex;
 }
 
+
+
 #formsContainer {
-  width: 100%; /* Take full width */
-  padding: 20px; /* Add some padding */
-  margin-top: 20px; /* Add space above the container */
   display: flex;
   justify-content: center;
   padding: 3%;
@@ -34,7 +38,7 @@ header {
 }
 
 .logInForm h1 {
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 10px;
 
 }
@@ -47,7 +51,7 @@ header {
 }
 
 .signUpForm h1 {
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -79,32 +83,55 @@ header {
   background-color: transparent !important;
 }
 
-#pTag {
-  font-size: 15px;
-  color: white;
-  text-align: center;
-  padding-top: 2%;
-  background-color: rgb(136, 74, 207, .5);
-  border-radius: 10px;
-}
-
 footer {
   display: flex;
-  align-items: center; 
+  /* align-items: center;  */
   justify-content: center; 
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(136, 74, 207, .5);
+  /* background-color: rgb(136, 74, 207, .5); */
   color: white;
+  text-align: center;
 }
 footer h4 {
-  font-size: 18px;
+  font-size: 13px;
 }
 
-.footerLogo {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px; 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .logInForm,
+  .signUpForm {
+    width: 80%; /* Adjust the width for smaller screens */
+    margin: 0 auto; /* Center the forms on the page */
+    margin-bottom: 20px; /* Add some space between the forms */
+    overflow-y: auto;
+    
+    font-size: 12px;
+
+  }
+
+  #pTag {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .logInForm,
+  .signUpForm {
+    width: 95%; /* Increase width for very small screens */
+    overflow-y: auto;
+    font-size: 12px;
+  }
+
+
+  footer {
+    display: none;
+  }
 }
