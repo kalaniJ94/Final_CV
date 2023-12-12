@@ -23,35 +23,34 @@ const LandingPage = () => {
 
   return (
     <>
-      <Container id="headerContainer ">
-        <Row className="flex">
-          <header className="flex-row mt-100">
-            <div>
-              <h1 className="landingHeader">Welcome to Celestial Voyages!</h1>
-              <img
-                className="logoStyle"
-                src={logo}
-                alt="Celestial Voyages logo"
-              />
-            </div>
-            
-          </header>
-        </Row>
-        <div className="voyageButtonContainer">
-          <Button className="beginVoyageBtn" onClick={toggleForms}>
-            {isLoggedIn ? "Log Out" : "Begin Your Voyage"}
-          </Button>
-        </div>
-      </Container>
-
-      {showForms && (
-        <Container id="formsContainer">
-          <LoginForm id="loginForm" onLogin={handleLogin} />
-          <SignUpForm id="signupForm" />
+      <div className="landingPageContainer">
+        <Container id="headerContainer ">
+          <Row className="flex">
+            <header className="flex-row mt-100">
+              <div>
+                <h1 className="landingHeader">Welcome to Celestial Voyages!</h1>
+                <img
+                  className="logoStyle"
+                  src={logo}
+                  alt="Celestial Voyages logo"
+                />
+              </div>
+            </header>
+          </Row>
+          <div className="voyageButtonContainer">
+            <Button className="beginVoyageBtn" onClick={toggleForms}>
+              {isLoggedIn ? "Log Out" : "Begin Your Voyage"}
+            </Button>
+          </div>
         </Container>
-      )}
 
-      
+        {showForms && (
+          <Container id="formsContainer">
+            <LoginForm id="loginForm" onLogin={handleLogin} />
+            <SignUpForm id="signupForm" />
+          </Container>
+        )}
+      </div>
     </>
   );
 };

@@ -21,7 +21,6 @@ function GalaxyMap() {
                 <h1>Premium Voyage</h1>
             </Container>
             <Container id="bigContainer">
-                {/* Define Buttons for Planets here */}
                 <Button className="planetButton planet8" onClick={() => handlePlanetClick('Planet 8')}>
                     <Image className="planetPhoto" src={planet8} />
                 </Button>

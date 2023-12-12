@@ -1,13 +1,38 @@
-html, body {
-  height: 100%;
+html,
+body {
+  height: 100vh;
   overflow-y: auto;
 }
 
 header {
-  text-align: center; /* Center everything within the header */
+  text-align: center;
   padding: 3%;
-  width: 100%;
   display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+footer h4 {
+  font-size: 13px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+.landingPageContainer {
+  flex: 1; /* Allows this container to expand and push the footer down */
+  /* Other styles... */
 }
 
 .logoStyle {
@@ -16,38 +41,17 @@ header {
   justify-content: flex-end;
 }
 
-.voyageButtonContainer{
-  padding-top: 15%;
-  display: flex;
-}
-
-
-
 #formsContainer {
   display: flex;
   justify-content: center;
   padding: 3%;
-}
-
-.logInForm {
-  width: 30%;
-  padding: 3%;
-  margin-right: 15px;
-  background-color: rgb(136, 74, 207, .5);
-  border-radius: 10px;
+  flex-wrap: wrap;
+  overflow-y: auto;
 }
 
 .logInForm h1 {
   font-size: 20px;
   margin-bottom: 10px;
-
-}
-
-.signUpForm {
-  width: 30%;
-  padding: 3%;
-  background-color: rgb(136, 74, 207, .5);
-  border-radius: 10px;
 }
 
 .signUpForm h1 {
@@ -56,47 +60,41 @@ header {
 }
 
 .loginBtn {
-  background-color: rgb(136, 74, 207) !important; 
+  background-color: rgb(136, 74, 207) !important;
   border: solid 1px rgb(236, 26, 173) !important;
+  opacity: 1 !important;
 }
 
 .signUpBtn {
-  background-color: rgb(136, 74, 207) !important; 
+  background-color: rgb(136, 74, 207) !important;
   border: solid 1px rgb(236, 26, 173) !important;
+  opacity: 1 !important;
 }
 
 .voyageButtonContainer {
   padding-top: 3%;
   display: flex;
-  justify-content: center; 
-  width: 100%; 
+  justify-content: center;
+  width: 100%;
 }
 
 .beginVoyageBtn.btn {
   background-color: rgb(136, 74, 207);
-  border: solid 1px rgb(236, 26, 173); 
+  border: solid 4px rgb(245, 59, 189);
+  padding: 10px 20px;
 }
 
-/* weird little floating blue boxes from react needed to be overwritten */
-.planetButton { 
-  border: transparent !important;
-  background-color: transparent !important;
+.beginVoyageBtn.btn:hover {
+  background-color: rgb(235, 186, 96); /* Light orange background on hover */
+  border: solid 4px rgb(245, 59, 189);
 }
 
-footer {
-  display: flex;
-  /* align-items: center;  */
-  justify-content: center; 
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /* background-color: rgb(136, 74, 207, .5); */
-  color: white;
-  text-align: center;
-}
-footer h4 {
-  font-size: 13px;
+.logInForm,
+.signUpForm {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(136, 74, 207, 0.5);
+  border-radius: 10px;
 }
 
 /* Responsive adjustments for smaller screens */
@@ -107,17 +105,11 @@ footer h4 {
     margin: 0 auto; /* Center the forms on the page */
     margin-bottom: 20px; /* Add some space between the forms */
     overflow-y: auto;
-    
     font-size: 12px;
-
   }
 
-  #pTag {
-    display: none;
-  }
-
-  footer {
-    display: none;
+  .landingPageContainer {
+    padding-bottom: 60px;
   }
 }
 
@@ -129,7 +121,6 @@ footer h4 {
     overflow-y: auto;
     font-size: 12px;
   }
-
 
   footer {
     display: none;

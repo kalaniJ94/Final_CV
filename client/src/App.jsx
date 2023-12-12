@@ -60,7 +60,7 @@ function App() {
   return (
 
     <AuthProvider>
-    <div style={backgroundStyle}>
+    <div id="app" style={backgroundStyle}>
       <StrictMode>
         <Outlet />
       </StrictMode>

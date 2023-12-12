@@ -37,7 +37,7 @@ function Voyages() {
   }
 
   return (
-    <>
+    <div style={{ flex: 1 }}> {/* Add flex styling */}
       <Navigation />
       <p>Please choose your voyage from the options below!</p>
       <div>
@@ -48,7 +48,7 @@ function Voyages() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
