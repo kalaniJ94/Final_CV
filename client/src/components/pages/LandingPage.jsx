@@ -23,12 +23,12 @@ const LandingPage = () => {
 
   return (
     <>
-      <Container id="headerContainer">
+      <Container id="headerContainer ">
         <Row className="flex">
           <header className="flex-row mt-100">
             <div>
               <h1 className="landingHeader">Welcome to Celestial Voyages!</h1>
-            <img
+              <img
                 className="logoStyle"
                 src={logo}
                 alt="Celestial Voyages logo"
@@ -36,11 +36,6 @@ const LandingPage = () => {
             </div>
             
           </header>
-          <Container id="pTag">
-        <p>
-        Welcome to Celestial Voyages, your portal to the cosmic wonders! The universe is vast and full of wonders waiting to be explored. Join us at Celestial Voyages, where every journey is a step into the extraordinary. Your adventure among the stars starts now!
-        </p>
-      </Container>
         </Row>
         <div className="voyageButtonContainer">
           <Button className="beginVoyageBtn" onClick={toggleForms}>
@@ -56,7 +51,6 @@ const LandingPage = () => {
         </Container>
       )}
 
-      
       
     </>
   );
