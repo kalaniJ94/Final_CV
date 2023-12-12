@@ -47,11 +47,11 @@ function App() {
   const backgroundStyle = {
     backgroundImage: `url(${isLoggedIn ? background2 : background1})`,
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    position: 'fixed',
+    position: 'relative',
     top: 0,
     left: 0,
     

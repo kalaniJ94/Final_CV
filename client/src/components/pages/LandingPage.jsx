@@ -33,7 +33,8 @@ const LandingPage = () => {
                   className="logoStyle"
                   src={logo}
                   alt="Celestial Voyages logo"
-                />
+                  />
+                  
               </div>
             </header>
           </Row>
