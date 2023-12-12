@@ -62,14 +62,14 @@ const seedVoyages = [
     price: 1000000,
     startDate: new Date("2024-10-01"),
     endDate: new Date("2024-11-15"),
-    destinations: []
+    destinations: ["Vulcanis Inferna", "Zephyria", "Coloris Orbis"]
   },
   {
     title: "Premium Galactic Getaway",
     price: 5000000,
     startDate: new Date("2025-01-01"),
     endDate: new Date("2025-02-15"),
-    destinations: []
+    destinations: ["Coralline Nebulae", "Dulcia Orbita", "Aridius Prime", "Spectra Maximus", "Verdantia Secreto"]
   },
 ];
 
