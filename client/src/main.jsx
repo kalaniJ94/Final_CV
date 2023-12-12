@@ -10,6 +10,7 @@ import LandingPage from './components/pages/LandingPage.jsx';
 import ErrorPage from './components/pages/ErrorPage.jsx';
 import GalaxyMap from './components/pages/GalaxyMap.jsx';
 import VoyagePage from './components/pages/VoyagePage.jsx';
+import BasicVoyage from './components/pages/BasicVoyage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/voyages',
         element: <VoyagePage/>
+      },
+      {
+        path: '/basicVoyage',
+        element: <BasicVoyage/>
       }
     ],
   },

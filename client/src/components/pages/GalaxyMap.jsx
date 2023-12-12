@@ -29,7 +29,8 @@ return (
             <h1>Galaxy Destinations</h1>
         </Container>
         <Container id="bigContainer">
-            <Button className="planetButton planet3" onClick={() => handlePlanetClick('Planet 3')}>
+            {/* Move Basic Planets */}
+            {/* <Button className="planetButton planet3" onClick={() => handlePlanetClick('Planet 3')}>
                 <Image className="planetPhoto" src={planet3} />
             </Button>
             
@@ -39,7 +40,7 @@ return (
             
             <Button className="planetButton planet7" onClick={() => handlePlanetClick('Planet 7')}>
                 <Image className="planetPhoto" src={planet7} />
-            </Button>
+            </Button> */}
             <Button className="planetButton planet8" onClick={() => handlePlanetClick('Planet 8')}>
                 <Image className="planetPhoto" src={planet8} />
             </Button>
