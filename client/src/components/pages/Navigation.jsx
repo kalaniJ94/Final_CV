@@ -29,7 +29,7 @@ const LogoutForm = ({ onLogout }) => {
     }
   };
   return (
-    <Container>
+    <Container className='logout-container'>
       <form noValidate  onSubmit={handleFormSubmit}>
        
         <button type="submit">Logout</button>
@@ -41,26 +41,30 @@ const LogoutForm = ({ onLogout }) => {
 function Navigation({ activePage, setActivePage }) {
   return (
     <Container>
-      <Row>
+      <Row className="justify-content-between">
+        <Col xs="auto">
+          <LogoutForm />
+        </Col>
 
-  <ul className='nav nav-tabs'>
-    <li className='nav-item'>
-      <a href='/galaxyMap'
-          onClick={() => setActivePage('galaxyMap')}
-          className= {activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}
-          >Galaxy Map</a>
-    </li>
-    <li className='nav-item'>
-      <a href='/voyages'
-          onClick={() => setActivePage('voyages')}
-          className= {activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}
-          >Voyages</a>
-    </li>
-    <LogoutForm/>
-
-  </ul>
-          </Row>
-
+        <Col xs="auto">
+          <ul className='nav nav-tabs'>
+            <li className='nav-item'>
+              <a href='/galaxyMap'
+                  onClick={() => setActivePage('galaxyMap')}
+                  className={activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}>
+                  Galaxy Map
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a href='/voyages'
+                  onClick={() => setActivePage('voyages')}
+                  className={activePage === 'voyages' ? 'nav-link active' : 'nav-link'}>
+                  Voyages
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
     </Container>    
   );
 }

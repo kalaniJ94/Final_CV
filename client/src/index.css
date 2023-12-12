@@ -25,7 +25,6 @@ html, body {
 body {
   width: 100%;
   height: 100%;
- background-image: url('./assets/images/landingpage.png');
 }
 #root{
   height: 100%;
@@ -38,54 +37,103 @@ header{
   justify-content: space-around;
 }
 
-#headerContainer{
-margin-bottom: 400px;
-margin-top: 35px;
-height: 75px;
-color: white;
-}
-#pTag{
-  margin-bottom: 125px;
-}
-#forms{
-  width: 33%;
-  display: flex;
-  justify-content: space-between;
-
-}
-
-footer{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-/* Map section */
-
-#bigContainer{
-max-width: 1320px;
-  display: inline-flex;
-}
-#galaxyMap{
-  width: 75%;
-  height: 65%;
-border-radius: 10%;
-margin: 0px 130px 0px 50px;
-}
-#planetCards{
+.introMap {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 60%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5%;
+  padding: 2px;
+  color: #FF8C61; 
+  background-color: rgba(248, 242, 244, 0.25); 
+  padding: 20px;
+  border-radius: 20px;
 }
 
-#planet{
-  margin: 0px 0px 50px 0px;
-  background-color: bisque;
-
+.introMap h2{
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 0px;
 }
-#planetImg{
-  height:275px
+
+#bigContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; 
+  position: relative;
+  margin: auto; 
+}
+
+#galaxyMap {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10%;
+  margin: auto; /* Center the image */
+}
+
+.planetButton {
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.planetPhoto {
+  position: absolute;
+  max-width: 80px;
+  max-height: 80px;
+  transition: all 0.3s ease;
+  border-radius: 50%; 
+}
+
+.planetPhoto:hover {
+  box-shadow: 0 0 15px 10px rgba(236, 24, 166, 0.7); 
+}
+
+/* planet positions */
+
+.planet3 { top: 20%; left: 40%; }
+.planet4 { top: 10%; left: 50%; }
+.planet5 { top: 15%; left: 80%; }
+.planet7 { top: 60%; left: 0%; }
+.planet8 { top: 70%; left: 50%; }
+.planet9 { top: 60%; left: 70%; }
+.planet10 { top: 50%; left: 90%; }
+.planet11 { top: 10%; left: 10%; }
+.planet12 { top: 50%; left: 20%; }
+
+/* navigation */
+
+.logout-container button {
+  /* Styles for the logout button */
+  background-color: transparent;
+  color: #f77b28; 
+  margin-top: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none; 
+}
+
+
+.nav-item {
+  /* Styles for the map and voyages */
+  color: #5C374C !important; 
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none; 
+} 
+
+.nav-link {
+  color: #FF8C61 !important;
+}
+
+.nav-link:hover {
+  color: #5C374C !important; 
 }
 
 @media only screen and (max-width: 600px) {
@@ -122,3 +170,4 @@ margin: 0px 130px 0px 50px;
     margin-top: 0px;
   }
 }
+

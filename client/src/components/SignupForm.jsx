@@ -48,6 +48,8 @@ const SignupForm = () => {
 
   return (
     <>
+    <div className='signUpForm scrollable-container'>
+    <h1>Sign Up</h1>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
@@ -91,13 +93,14 @@ const SignupForm = () => {
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
-        <Button
+        <Button className='signUpBtn'
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
         </Button>
       </Form>
+      </div>
     </>
   );
 };

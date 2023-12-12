@@ -29,12 +29,22 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/galaxyMap');
+    window.location.assign('/voyages');
   }
 
   logout(idToken) {
     localStorage.removeItem('id_token', idToken);
     window.location.assign('/');
+  }
+
+  withAuth() {
+    const token = this.getToken();
+    return {
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    };
   }
 }
 

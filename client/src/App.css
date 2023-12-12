@@ -1,17 +1,137 @@
-* {
-  background-repeat: no-repeat;
-  background-size: cover;
+html, body {
+  height: 100%;
+  overflow-y: auto;
 }
 
-header{
+header {
+  text-align: center; /* Center everything within the header */
+  padding: 3%;
   width: 100%;
-
+  display: flex;
 }
 
 .logoStyle {
   width: 200px;
-  height: 200px;
-  position: absolute; /* Or 'relative' if positioning within the header */
-  top: 0;
+  height: auto;
+  justify-content: flex-end;
+}
+
+.voyageButtonContainer{
+  padding-top: 15%;
+  display: flex;
+}
+
+
+
+#formsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 3%;
+}
+
+.logInForm {
+  width: 30%;
+  padding: 3%;
+  margin-right: 15px;
+  background-color: rgb(136, 74, 207, .5);
+  border-radius: 10px;
+}
+
+.logInForm h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+
+}
+
+.signUpForm {
+  width: 30%;
+  padding: 3%;
+  background-color: rgb(136, 74, 207, .5);
+  border-radius: 10px;
+}
+
+.signUpForm h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.loginBtn {
+  background-color: rgb(136, 74, 207) !important; 
+  border: solid 1px rgb(236, 26, 173) !important;
+}
+
+.signUpBtn {
+  background-color: rgb(136, 74, 207) !important; 
+  border: solid 1px rgb(236, 26, 173) !important;
+}
+
+.voyageButtonContainer {
+  padding-top: 3%;
+  display: flex;
+  justify-content: center; 
+  width: 100%; 
+}
+
+.beginVoyageBtn.btn {
+  background-color: rgb(136, 74, 207);
+  border: solid 1px rgb(236, 26, 173); 
+}
+
+/* weird little floating blue boxes from react needed to be overwritten */
+.planetButton { 
+  border: transparent !important;
+  background-color: transparent !important;
+}
+
+footer {
+  display: flex;
+  /* align-items: center;  */
+  justify-content: center; 
+  position: fixed;
   left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: rgb(136, 74, 207, .5); */
+  color: white;
+  text-align: center;
+}
+footer h4 {
+  font-size: 13px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .logInForm,
+  .signUpForm {
+    width: 80%; /* Adjust the width for smaller screens */
+    margin: 0 auto; /* Center the forms on the page */
+    margin-bottom: 20px; /* Add some space between the forms */
+    overflow-y: auto;
+    
+    font-size: 12px;
+
+  }
+
+  #pTag {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .logInForm,
+  .signUpForm {
+    width: 95%; /* Increase width for very small screens */
+    overflow-y: auto;
+    font-size: 12px;
+  }
+
+
+  footer {
+    display: none;
+  }
 }
