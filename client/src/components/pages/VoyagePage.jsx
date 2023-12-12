@@ -37,28 +37,27 @@ function Voyages() {
   }
 
   return (
-    <div style={{ flex: 1 }}> {/* Add flex styling */}
-      <Navigation />
-      <p>Please choose your voyage from the options below!</p>
-      <div>
-        {voyages.map((voyage) => (
-          <div key={voyage._id}>
-            <h2>{voyage.title}</h2>
-            {/* Render other voyage details */}
-            <h3>{voyage.price}</h3>
-            <h3>{voyage.startDate}</h3>
-            <h3>{voyage.endDate}</h3>
-            <h3>Destinations:</h3>
-            <ul>
-              {voyage.destinations.map((destination, index) => (
-                <li key={index}>{destination}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+    <div style={{ flex: 1 }}>
+    <Navigation />
+    <p>Please choose your voyage from the options below!</p>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}> {/* Card container styles */}
+      {voyages.map((voyage) => (
+        <div key={voyage._id} style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '10px', width: '300px' }}> {/* Card styles */}
+          <h2>{voyage.title}</h2>
+          <h3>{voyage.price}</h3>
+          <h3>{voyage.startDate}</h3>
+          <h3>{voyage.endDate}</h3>
+          <h3>Destinations:</h3>
+          <ul>
+            {voyage.destinations.map((destination, index) => (
+              <li key={index}>{destination}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
 }
 
 export default Voyages;

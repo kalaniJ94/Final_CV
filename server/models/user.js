@@ -24,11 +24,11 @@ const userSchema = new Schema(
             type: String,
             required: true,
             minlength: 8
-        },
-        voyages: [{
-                type: Schema.Types.ObjectId,
-                ref: 'Voyage'
-            }]
+        }
+        // voyages: [{
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'Voyage'
+        //     }]
     },
     {
         toJSON: {
