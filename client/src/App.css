@@ -17,7 +17,38 @@ header {
 }
 
 #formsContainer {
-  max-width: 20%;
+  width: 100%; /* Take full width */
+  padding: 20px; /* Add some padding */
+  margin-top: 20px; /* Add space above the container */
+  display: flex;
+  justify-content: center;
+  padding: 3%;
+}
+
+.logInForm {
+  width: 30%;
+  padding: 3%;
+  margin-right: 15px;
+  background-color: rgb(136, 74, 207, .5);
+  border-radius: 10px;
+}
+
+.logInForm h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+
+}
+
+.signUpForm {
+  width: 30%;
+  padding: 3%;
+  background-color: rgb(136, 74, 207, .5);
+  border-radius: 10px;
+}
+
+.signUpForm h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .loginBtn {
