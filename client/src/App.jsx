@@ -4,8 +4,15 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Outlet } from 'react-router-dom';
+
+import { AuthProvider } from './components/AuthContext.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
+
+  
+  
 import AuthService from './utils/auth'; 
 import Footer from './components/pages/Footer';
+
 
 import background1 from "./assets/images/landingpage.png"; 
 import background2 from "./assets/images/background1.png"; 
@@ -51,12 +58,16 @@ function App() {
   };
 
   return (
+
+    <AuthProvider>
     <div style={backgroundStyle}>
       <StrictMode>
         <Outlet />
       </StrictMode>
       <Footer />
     </div>
+</AuthProvider>
+
   );
 }
 
