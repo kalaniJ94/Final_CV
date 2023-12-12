@@ -48,7 +48,12 @@ function Voyages() {
             <h3>{voyage.price}</h3>
             <h3>{voyage.startDate}</h3>
             <h3>{voyage.endDate}</h3>
-            <h3>{voyage.destinations}</h3>
+            <h3>Destinations:</h3>
+            <ul>
+              {voyage.destinations.map((destination, index) => (
+                <li key={index}>{destination}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
