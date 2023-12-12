@@ -94,18 +94,16 @@ header{
 }
 
 /* planet positions */
-.planet1 { top: 10%; left: 0%; }
-.planet2 { top: 20%; left: 30%; }
-.planet3 { top: 40%; left: 40%; }
+
+.planet3 { top: 20%; left: 40%; }
 .planet4 { top: 10%; left: 50%; }
 .planet5 { top: 15%; left: 80%; }
-.planet6 { top: 70%; left: 30%; }
-.planet7 { top: 80%; left: 0%; }
-.planet8 { top: 80%; left: 50%; }
-.planet9 { top: 80%; left: 80%; }
+.planet7 { top: 60%; left: 0%; }
+.planet8 { top: 70%; left: 50%; }
+.planet9 { top: 60%; left: 70%; }
 .planet10 { top: 50%; left: 90%; }
-.planet11 { top: 60%; left: 10%; }
-.planet12 { top: 50%; left: 50%; }
+.planet11 { top: 10%; left: 10%; }
+.planet12 { top: 50%; left: 20%; }
 
 /* navigation */
 
