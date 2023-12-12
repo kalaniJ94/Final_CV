@@ -11,18 +11,11 @@ import planet7 from "../../assets/images/planet7.png";
 function BasicVoyage() {
 const [hoveredPlanet, setHoveredPlanet] = useState(null);
 
-const handlePlanetHover = (planet) => {
-    setHoveredPlanet(planet);
-};
-const handlePlanetLeave = () => {
-    setHoveredPlanet(null);
-} ;
-
 return (
     <div>
         <Navigation />
         <Container className="introMap">
-            <h1>Galaxy Destinations</h1>
+            <h1>Basic Voyage</h1>
         </Container>
         <Container id="bigContainer">
             <Button className="planetButton planet3" onClick={() => handlePlanetClick('Planet 3')}>
