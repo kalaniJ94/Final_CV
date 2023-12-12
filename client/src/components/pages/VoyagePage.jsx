@@ -45,6 +45,10 @@ function Voyages() {
           <div key={voyage._id}>
             <h2>{voyage.title}</h2>
             {/* Render other voyage details */}
+            <h3>{voyage.price}</h3>
+            <h3>{voyage.startDate}</h3>
+            <h3>{voyage.endDate}</h3>
+            <h3>{voyage.destinations}</h3>
           </div>
         ))}
       </div>
