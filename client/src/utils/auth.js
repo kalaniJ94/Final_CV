@@ -36,6 +36,16 @@ class AuthService {
     localStorage.removeItem('id_token', idToken);
     window.location.assign('/');
   }
+
+  withAuth() {
+    const token = this.getToken();
+    return {
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    };
+  }
 }
 
 export default new AuthService();

@@ -6,16 +6,32 @@ const auth = require('../utils/auth');
 
 module.exports = {
     // get a specified voyage and add it to the users list of voyages
-    async getVoyage(req, res) {
+    async getAllVoyages(req, res) {
+        try {
+            // apply auth middleware 
+            authMiddleware( req, res, async () =>{
+                const voyage = await Voyage.find({});
+                if (!voyage) {
+                    return res.status(404).json({ message: 'Voyage not found' });
+                }
+                res.status(200).json(voyage);
+            })
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    },
+    // get single voyage
+    async getSingleVoyage(req, res) {
         try {
             // apply auth middleware 
             authMiddleware( req, res, async () =>{
                 const voyage = await Voyage.findOne({ _id: req.params.voyageId });
                 if (!voyage) {
-                    return res.status(404).json({ message: 'Something went wrong please try again' });
+                    return res.status(404).json({ message: 'Voyage not found' });
                 }
+                res.status(200).json(voyage);
             })
-            res.status(200).json(voyage);
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
