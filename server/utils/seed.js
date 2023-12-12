@@ -105,7 +105,7 @@ connection.once("open", async () => {
   try {
       for (const seedVoyage of seedVoyages) {
           const planets = await Planet.find({});
-          seedVoyage.destinations = planets.map((planet) => planet._id);
+          // seedVoyage.destinations = planets.map((planet) => planet._id);
           const newVoyage = new Voyage(seedVoyage);
           await newVoyage.save();
           console.log(`Voyage successfully seeded: ${seedVoyage.title}`);
