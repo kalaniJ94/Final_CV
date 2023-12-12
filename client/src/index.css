@@ -18,24 +18,18 @@
   color: white;
 }
 
-html, body {
+/* html, body {
   height: 100%;
 }
 
 body {
   width: 100%;
   height: 100%;
-}
-#root{
+} */
+/* #root{
   height: 100%;
   width: 100%;
-}
-/* Landing Page stuff */
-header{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
+} */
 
 .introMap {
   display: flex;
@@ -66,8 +60,8 @@ header{
 }
 
 #galaxyMap {
-  max-width: 100%;
-  max-height: 80vh;
+  max-width: auto;
+  max-height: 70vh;
   border-radius: 10%;
   margin: auto; /* Center the image */
 }
@@ -79,6 +73,8 @@ header{
   cursor: pointer;
   max-width: 80px;
   max-height: 80px;
+  border: transparent !important;
+  background-color: transparent !important;
 }
 
 .planetPhoto {
@@ -136,7 +132,7 @@ header{
   color: #5C374C !important; 
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   #bigContainer{
     flex-direction: column;
   }
@@ -169,5 +165,5 @@ header{
   #footerContainer{
     margin-top: 0px;
   }
-}
+} */
 
