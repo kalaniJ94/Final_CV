@@ -21,7 +21,6 @@ const handlePlanetHover = (planet) => {
 const handlePlanetLeave = () => {
     setHoveredPlanet(null);
 } ;
-
 return (
     <div>
         <Navigation />
@@ -58,7 +57,7 @@ return (
 
 
         </Container>
-    </div>
+
     )
 }
 
