@@ -80,38 +80,29 @@ connection.once("open", async () => {
   console.log("Connected to MongoDB");
 
   try {
-    // seed planets
+    // Delete and seed planets
+    await Planet.deleteMany({});
+    console.log("Existing planets deleted.");
     for (const seedPlanet of seedPlanets) {
-      const existingPlanet = await Planet.findOne({ planetName: seedPlanet.planetName });
-      if (!existingPlanet) {
-        const newPlanet = new Planet(seedPlanet);
-        await newPlanet.save();
-        console.log(`Inserted planet: ${seedPlanet.planetName}`);
-      } else {
-        console.log(`Planet already exists: ${seedPlanet.planetName}`);
-      }
+      const newPlanet = new Planet(seedPlanet);
+      await newPlanet.save();
+      console.log(`Inserted planet: ${seedPlanet.planetName}`);
     }
-    console.log('Seeding completed.');
+    console.log('Planet seeding completed.');
+
+    // Delete and seed voyages
+    await Voyage.deleteMany({});
+    console.log("Existing voyages deleted.");
+    for (const seedVoyage of seedVoyages) {
+      const newVoyage = new Voyage(seedVoyage);
+      await newVoyage.save();
+      console.log(`Voyage successfully seeded: ${seedVoyage.title}`);
+    }
+    console.log('Voyage seeding completed.');
 
   } catch (err) {
     console.error('Error during seeding:', err);
+  } finally {
     connection.close();
   }
-});
-
-
-connection.once("open", async () => {
-  console.log("Connected to MongoDB");
-  try {
-      for (const seedVoyage of seedVoyages) {
-          const planets = await Planet.find({});
-          // seedVoyage.destinations = planets.map((planet) => planet._id);
-          const newVoyage = new Voyage(seedVoyage);
-          await newVoyage.save();
-          console.log(`Voyage successfully seeded: ${seedVoyage.title}`);
-      }
-      } catch (err) {
-      console.error('Error during seeding:', err);
-      connection.close();
-      }
 });
