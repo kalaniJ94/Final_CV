@@ -58,15 +58,16 @@ function App() {
   };
 
   return (
-
-    <AuthProvider>
+    <>
+     <AuthProvider>
     <div id="app" style={backgroundStyle}>
       <StrictMode>
         <Outlet />
       </StrictMode>
       <Footer />
     </div>
-</AuthProvider>
+   </AuthProvider>
+    </>
 
   );
 }
