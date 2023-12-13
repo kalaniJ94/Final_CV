@@ -1,4 +1,6 @@
 import Card from 'react-bootstrap/Card';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../style/voyages.css'
 
@@ -8,8 +10,10 @@ import image2 from  '../../src/assets/images/vacay2.png'
 const images = [image1, image2]
 
 function VoyageCard({title, price, destinations, imageIndex}) {
+  const routePath = title === 'Basic Celestial Odyssey' ? '/basicVoyage' : '/galaxyMap';
     return (
     <div className='card-container'>
+        <Link to={routePath}>
         <Card className='card-element'>
         <Card.Img variant="top" src={images[imageIndex]} />
     
@@ -26,6 +30,7 @@ function VoyageCard({title, price, destinations, imageIndex}) {
             </Card.Text>
         </Card.Body>
         </Card>
+        </Link>
         </div>
     );
 }
