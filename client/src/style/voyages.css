@@ -8,6 +8,11 @@
     flex-wrap: wrap;
 }
 
+.card-container a, .card-container a:hover, .card-container a:focus, .card-container a:active {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Optional: Inherits the text color from the parent element */
+}
+
 .card-element {
     margin: 10px;
     padding: 10px;
