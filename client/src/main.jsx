@@ -23,9 +23,8 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: '/galaxyMap',
+        path: '/premiumVoyage',
         element: <GalaxyMap />,
-        
       },
       {
         path: '/voyages',

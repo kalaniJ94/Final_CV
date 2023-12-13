@@ -23,7 +23,6 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 // });
 
 app.use(routes);
-//trying to trigger a new push/change 
 db.once('open', () => {
   app.listen(PORT, () => console.log(` Now listening on http://localhost:${PORT}`));
 });

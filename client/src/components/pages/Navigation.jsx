@@ -56,8 +56,8 @@ function Navigation({ activePage, setActivePage }) {
               </a>
             </li>
             <li className='nav-item'>
-              <a href='/galaxyMap'
-                  onClick={() => setActivePage('galaxyMap')}
+              <a href='/premiumVoyage'
+                  onClick={() => setActivePage('premiumVoyage')}
                   className={activePage === 'galaxyMap' ? 'nav-link active' : 'nav-link'}>
                   Premium Voyage
               </a>
