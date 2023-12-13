@@ -1,7 +1,7 @@
 /* styling for the voyage card elements */
 .card-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .card-element:hover {
-    box-shadow: 4px 4px 4px 0 rgba(148, 0, 211, 0.8); /* Neon purple box shadow on hover */
+    box-shadow: 4px 4px 4px 0 rgba(148, 0, 211, 0.8);
     transform: scale(1.01);
   }
 
