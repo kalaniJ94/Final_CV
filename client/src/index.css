@@ -65,6 +65,12 @@ body {
   margin: auto; /* Center the image */
 }
 
+.pickVoyage{
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
 .planetButton {
   position: absolute;
   border: none;
@@ -129,6 +135,27 @@ body {
 
 .nav-link:hover {
   color: #5C374C !important; 
+}
+
+.form-element {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+  justify-content: space-around; /* Manages spacing between cards */
+  align-items: flex-start; /* Aligns items at the start of the container */
+}
+
+.packagePic{
+  max-width: 300px;
+  max-height: auto;
+  border-radius: 10%;
+}
+
+.card-element {
+  margin: 10px;
+  flex-basis: calc(50% - 20px); /* Adjusts the width of each card, minus margin */
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  /* Other styling remains the same */
 }
 
 /* @media only screen and (max-width: 600px) {

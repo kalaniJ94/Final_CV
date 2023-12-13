@@ -41,12 +41,19 @@ function Voyages() {
   }
 
   return (
-  <div style={{ flex: 1 }}>
+    <div style={{ flex: 1 }}>
     <Navigation />
-    <p>Please choose your voyage from the options below!</p>
+    <p className="pickVoyage">Please choose your voyage from the options below!</p>
+      
     <div className="form-element">
-      {voyages.map((voyage) => (
-        <VoyageCard key={voyage._id} title={voyage.title} price={voyage.price} destinations={voyage.destinations}/>
+      {voyages.map((voyage, index) => (
+        <VoyageCard
+          key={voyage._id}
+          title={voyage.title}
+          price={voyage.price}
+          destinations={voyage.destinations}
+          imageIndex={index % 2} // Alternate between 0 and 1 for each card
+        />
       ))}
     </div>
   </div>
