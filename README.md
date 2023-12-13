@@ -52,17 +52,20 @@ To run the app locally, enter 'run npm develop' into the console.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+[Screenshot showing the Login screen](./client/src/assets/images/login.png)
+[Screenshot showing the basicVoyages page, and the glowing function](./client/src/assets/images/basic.png)
+[Screenshot showing the premiumVoyages page](./client/src/assets/images/premium.png)
 
 ## Credits
 
 W3Schools https://www.w3schools.com/
 
 MDN https://developer.mozilla.org/en-US/
+
+ChatGPT for AI generated images.
+
+
+Render for docs on deployment
 
 ## License
 MIT License
@@ -89,9 +92,7 @@ SOFTWARE.
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+![badmath](https://img.shields.io/github/languages/top/kalaniJ94/Final_CV)
 
 https://img.shields.io/badge/any_text-you_like-blue
 
