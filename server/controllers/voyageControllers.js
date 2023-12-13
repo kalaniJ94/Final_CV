@@ -1,5 +1,6 @@
 // imports
 const Voyage = require('../models/voyage');
+const User = require('../models/user');
 const { authMiddleware } = require('../utils/auth');
 const auth = require('../utils/auth');
 
