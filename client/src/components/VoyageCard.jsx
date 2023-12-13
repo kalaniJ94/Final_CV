@@ -2,13 +2,13 @@ import Card from 'react-bootstrap/Card';
 
 import '../style/voyages.css'
 
-const image = '../assets/images/landingpage.png'
+import testImg from  '../assets/images/landingpage.png'
 
 function VoyageCard({title, price, destinations}) {
     return (
     <div className='card-container'>
         <Card className='card-element'>
-        <Card.Img variant="top" src={image} style={{width: '100%', height: '50%'}} />
+        {/* <Card.Img variant="top" src={testImg} style={{width: '50%', height: '25%'}} /> */}
         <Card.Body className='card-body'>
             <Card.Title className='title'><strong>{title}</strong></Card.Title>
             <Card.Text className='price'>

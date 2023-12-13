@@ -20,7 +20,7 @@ function Voyages() {
         setLoading(false);
       } catch (error) {
         console.log(error);
-        setError(error.message || 'An error occurred');
+        setError(error.message || 'An error occurred while fetching voyages');
         setLoading(false);
       }
     };

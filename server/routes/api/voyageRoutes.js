@@ -12,9 +12,7 @@ const {
 // routes
 // https://localhost:3001/api/voyages
 router.route('/').get(getAllVoyages);
-
 // // https://localhost:3001/api/voyages/:voyageId
-
 router.route('/:voyageId').get(getSingleVoyage);
 // // https://localhost:3001/api/voyage/:userId
 router.route('/:userId').post(createVoyage);
