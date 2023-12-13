@@ -1,7 +1,7 @@
 import Navigation from "./Navigation";
 import React, { useEffect, useState } from "react";
 import Auth from '../../utils/auth.js';
-
+import VoyageCard from '../VoyageCard';
 
 function Voyages() {
   const [voyages, setVoyages] = useState([]);
@@ -37,23 +37,12 @@ function Voyages() {
   }
 
   return (
-    <div style={{ flex: 1 }}>
+  <div style={{ flex: 1 }}>
     <Navigation />
     <p>Please choose your voyage from the options below!</p>
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}> {/* Card container styles */}
+    <div className="form-element">
       {voyages.map((voyage) => (
-        <div key={voyage._id} style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '10px', width: '300px' }}> {/* Card styles */}
-          <h2>{voyage.title}</h2>
-          <h3>{voyage.price}</h3>
-          <h3>{voyage.startDate}</h3>
-          <h3>{voyage.endDate}</h3>
-          <h3>Destinations:</h3>
-          <ul>
-            {voyage.destinations.map((destination, index) => (
-              <li key={index}>{destination}</li>
-            ))}
-          </ul>
-        </div>
+        <VoyageCard key={voyage._id} title={voyage.title} price={voyage.price} destinations={voyage.destinations}/>
       ))}
     </div>
   </div>

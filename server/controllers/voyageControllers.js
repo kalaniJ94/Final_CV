@@ -1,5 +1,6 @@
 // imports
 const Voyage = require('../models/voyage');
+const User = require('../models/user');
 const { authMiddleware } = require('../utils/auth');
 const auth = require('../utils/auth');
 
@@ -20,7 +21,9 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+
     
+
     // get single voyage
     async getSingleVoyage(req, res) {
         try {
@@ -46,6 +49,7 @@ module.exports = {
                     { _id: req.params.userId },
                     { $addToSet: { voyages: req.body } },
                     { runValidators: true, new: true }
+
                     );
                     if (!usersVoyage) {
                         return res.status(404).json({ message: 'no user found please sign in or try again!' });
@@ -78,3 +82,4 @@ module.exports = {
                 }
             },
         }
+
