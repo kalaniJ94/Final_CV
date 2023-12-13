@@ -28,6 +28,9 @@ function VoyageCard({title, price, destinations, imageIndex}) {
                 <li key={index} style={{listStyle: 'none'}}>{destination}</li>
                 ))}
             </Card.Text>
+            <Card.Text className='booking-text'>
+            CLICK to book your voyage.
+          </Card.Text>
         </Card.Body>
         </Card>
         </Link>

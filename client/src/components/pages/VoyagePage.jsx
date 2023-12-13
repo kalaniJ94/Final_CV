@@ -2,7 +2,6 @@ import Navigation from "./Navigation";
 import React, { useEffect, useState } from "react";
 import Auth from '../../utils/auth.js';
 import VoyageCard from '../VoyageCard';
-import vacay1 from '../../assets/images/vacay1.png';
 
 function Voyages() {
   const [voyages, setVoyages] = useState([]);
@@ -40,7 +39,7 @@ function Voyages() {
   return (
     <div style={{ flex: 1 }}>
     <Navigation />
-    <p>Please choose your voyage from the options below!</p>
+    <p className="pickVoyage">Please choose your voyage from the options below!</p>
       
     <div className="form-element">
       {voyages.map((voyage, index) => (
