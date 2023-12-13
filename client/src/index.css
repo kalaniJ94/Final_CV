@@ -82,6 +82,16 @@ body {
   background-color: transparent !important;
 }
 
+.planetInfo {
+  background-color: rgba(78, 58, 133, 0.4); /* Adjusted for better visibility */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100; /* Ensures the div is above other elements */
+  pointer-events: none; /* Allows click events to pass through to elements behind */
+  max-width: 60%; /* Ensures the div doesn't take up the whole screen */
+  text-align: center;
+}
+
 .planetPhoto {
   position: absolute;
   max-width: 80px;
