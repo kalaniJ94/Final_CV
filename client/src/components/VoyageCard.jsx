@@ -1,12 +1,18 @@
 import Card from 'react-bootstrap/Card';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../style/voyages.css'
 
 import testImg from  '../assets/images/landingpage.png'
 
 function VoyageCard({title, price, destinations}) {
+    
+    const routePath = title === 'Basic Celestial Odyssey' ? '/basicVoyage' : '/galaxyMap';
+
     return (
     <div className='card-container'>
+        <Link to={routePath}>
         <Card className='card-element'>
         {/* <Card.Img variant="top" src={testImg} style={{width: '50%', height: '25%'}} /> */}
         <Card.Body className='card-body'>
@@ -22,6 +28,7 @@ function VoyageCard({title, price, destinations}) {
             </Card.Text>
         </Card.Body>
         </Card>
+        </Link>
         </div>
     );
 }
