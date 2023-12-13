@@ -2,7 +2,10 @@
 .card-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly; /* Adjusts the space between cards */
     align-items: center;
+    width: 30%; /* Adjust as needed */
+    flex-wrap: wrap;
 }
 
 .card-element {
