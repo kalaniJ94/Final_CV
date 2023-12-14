@@ -16,7 +16,7 @@ function Voyages() {
         if (!response.ok) {
           throw new Error('Failed to fetch voyages');
         }
-        const data = await response.json();git add 
+        const data = await response.json(); 
         setVoyages(data);
         setLoading(false);
       } catch (error) {

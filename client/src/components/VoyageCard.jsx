@@ -10,7 +10,7 @@ import image2 from  '../../src/assets/images/vacay2.png'
 const images = [image1, image2]
 
 function VoyageCard({title, price, destinations, imageIndex}) {
-  const routePath = title === 'Basic Celestial Odyssey' ? '/basicVoyage' : '/galaxyMap';
+  const routePath = title === 'Basic Celestial Odyssey' ? '/basicVoyage' : '/premiumVoyage';
     return (
     <div className='card-container'>
         <Link to={routePath}>

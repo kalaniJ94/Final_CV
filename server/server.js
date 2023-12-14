@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(routes);
   
   app.use(express.static(path.join(__dirname, "../client/dist")));
   
@@ -17,7 +18,6 @@ app.use(express.json());
     res.sendFile(path.join(__dirname, "../client/dist", "index.html"))
   });
   
-  app.use(routes);
 // Serve static files from the Vite build directory
 // app.use(express.static(path.join(__dirname, '../client/dist')));
 
