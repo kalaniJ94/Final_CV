@@ -28,12 +28,12 @@ class AuthService {
   }
 
   login(idToken) {
-    localStorage.setItem('id_token', idToken);
+    localStorage.setItem('token', idToken);
     window.location.assign('/voyages');
   }
 
   logout(idToken) {
-    localStorage.removeItem('id_token', idToken);
+    localStorage.removeItem('token', idToken);
     window.location.assign('/');
   }
 
