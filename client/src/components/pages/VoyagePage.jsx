@@ -8,14 +8,14 @@ function Voyages() {
     {
       _id: '1',
       title: 'Basic Celestial Odyssey',
-      price: '$1,000,000',
+      price: '1,000,000',
       destinations: 'Vulcanis Inferna, Zephyria, Coloris Orbis',
       imageIndex: 0,
     },
     {
       _id: '2',
       title: 'Premium Galactic Getaway',
-      price: '$5,000,000',
+      price: '5,000,000',
       destinations: 'Coralline Nebulae, Dulcia Orbita, Aridius Prime, Spectra Maximus, Verdantia Secreto',
       imageIndex: 1,
     },
