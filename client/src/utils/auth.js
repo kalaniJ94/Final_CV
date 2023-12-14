@@ -38,11 +38,11 @@ class AuthService {
   }
 
   withAuth() {
-    const idToken = this.getToken();
+    const token = this.getToken();
     return {
       headers: {
         'Content-Type': 'application/json',
-        authorization: idToken ? `Bearer ${idToken}` : ''
+        authorization: token ? `Bearer ${token}` : ''
       }
     };
   }

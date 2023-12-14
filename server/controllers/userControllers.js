@@ -28,6 +28,13 @@ module.exports = {
             // return user
             res.status(200).json(user);
 
+            const token = jwt.sign({ _id: user._id, email: user.email }, secret, { expiresIn: '2h' });
+
+            // send token to client
+            console.log("token created successfully: ", token);
+            res.status(200).json({ token });
+
+
         } catch (err) {
             console.log(err);
             res.status(500).json(err);

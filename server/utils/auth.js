@@ -8,7 +8,7 @@ module.exports = {
     let token = req.query.token || req.headers.authorization;
 
     if (req.headers.authorization) {
-      token = token.replace('Bearer', '').trim();
+      token = token.split(' ').pop().trim();
     }
 
     // if there is no token, or if the token has been removed, deny access
