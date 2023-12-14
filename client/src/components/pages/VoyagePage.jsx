@@ -11,15 +11,12 @@ function Voyages() {
   useEffect(() => {
     const getVoyages = async () => {
       try {
-        const authHeaders = Auth.withAuth();
-        // console.log('authHeaders', authHeaders);
-
-        const response = await fetch('/api/voyages', authHeaders);
+        const response = await fetch('http://localhost:3000/api/voyages', Auth.withAuth());        
         console.log('response', response);
         if (!response.ok) {
           throw new Error('Failed to fetch voyages');
         }
-        const data = await response.json();
+        const data = await response.json(); 
         setVoyages(data);
         setLoading(false);
       } catch (error) {
