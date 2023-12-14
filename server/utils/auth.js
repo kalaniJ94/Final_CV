@@ -8,13 +8,13 @@ module.exports = {
     let token = req.query.token || req.headers.authorization;
 
     if (req.headers.authorization) {
-      token = token.split(' ').pop().trim();
+      token = token.replace('Bearer', '').trim();
     }
 
     // if there is no token, or if the token has been removed, deny access
-    // if (!token) {
-    //   return res.status(403).json({ message: 'Your session has expired' });
-    // }
+    if (!token) {
+      return res.status(403).json({ message: 'Your session has expired' });
+    }
 
     try {
       const { data } = jwt.verify(token, secret, { expiresIn: expiration });
