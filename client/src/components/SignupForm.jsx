@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 
 const SignupForm = ({ onSignup }) => {
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-  const [validated] = useState(false);
+  const [validated, setValidated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
   const handleInputChange = (event) => {
@@ -18,7 +18,7 @@ const SignupForm = ({ onSignup }) => {
     event.preventDefault();
     const form = event.currentTarget;
 
-    setUserFormData({ ...userFormData, validated: true });
+    // setUserFormData({ ...userFormData, validated: true });
 
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -27,7 +27,7 @@ const SignupForm = ({ onSignup }) => {
 
     try {
       const response = await createUser(userFormData);
-
+console.log('response', response);
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
@@ -49,7 +49,6 @@ const SignupForm = ({ onSignup }) => {
       username: '',
       email: '',
       password: '',
-      validated: false,
     });
   };
 
