@@ -9,31 +9,59 @@ const { revokedTokens } = require('../utils/auth');
 
 module.exports = {
     // create user
+    // async createUser(req, res) {
+    //     try {
+    //         const { username, email, password } = req.body;
+    //         if (!username || !email || !password) {
+    //             return res.status(400).json({ message: 'Please enter a username, email, and password!' });
+    //         }
+    //         // check if user already exists throw an error
+    //         const userExists = await User.findOne({ email });
+    //         if (userExists) {
+    //             return res.status(400).json({ message: 'User already exists!' });
+    //         }
+    //         // hash password w/ 10 hashed rounds
+    //         const cryptPassword = await bcrypt.hash(password, 10);
+    //         // create user
+    //         const user = await User.create({ username, email, password: cryptPassword });
+    //         console.log("user created successfully");
+    //         // return user
+    //         res.status(200).json(user);
+
+    //         const token = jwt.sign({ _id: user._id, email: user.email }, secret, { expiresIn: '2h' });
+
+    //         // send token to client
+    //         console.log("token created successfully: ", token);
+    //         res.status(200).json({ token });
+
+
+    //     } catch (err) {
+    //         console.log(err);
+    //         res.status(500).json(err);
+    //     }
+    // },
     async createUser(req, res) {
         try {
             const { username, email, password } = req.body;
             if (!username || !email || !password) {
                 return res.status(400).json({ message: 'Please enter a username, email, and password!' });
             }
-            // check if user already exists throw an error
+            // check if user already exists
             const userExists = await User.findOne({ email });
             if (userExists) {
                 return res.status(400).json({ message: 'User already exists!' });
             }
-            // hash password w/ 10 hashed rounds
+            // hash password
             const cryptPassword = await bcrypt.hash(password, 10);
             // create user
             const user = await User.create({ username, email, password: cryptPassword });
             console.log("user created successfully");
-            // return user
-            res.status(200).json(user);
 
+            // create token for the new user
             const token = jwt.sign({ _id: user._id, email: user.email }, secret, { expiresIn: '2h' });
 
-            // send token to client
-            console.log("token created successfully: ", token);
-            res.status(200).json({ token });
-
+            // return user and token
+            res.status(200).json({ token, user: { _id: user._id, username: user.username, email: user.email } });
 
         } catch (err) {
             console.log(err);
