@@ -3,6 +3,7 @@ import React from "react";
 import VoyageCard from '../VoyageCard';
 
 function Voyages() {
+
   // Hardcoded data for voyages
   const voyages = [
     {
@@ -20,6 +21,7 @@ function Voyages() {
       imageIndex: 1,
     },
   ];
+
 
   return (
     <div style={{ flex: 1 }}>

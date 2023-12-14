@@ -9,22 +9,22 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(routes);
+
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"))
+});
   
-  app.use(express.static(path.join(__dirname, "../client/dist")));
-  
-  
-  app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../client/dist", "index.html"))
-  });
-  
-  app.use(routes);
 // Serve static files from the Vite build directory
 // app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// Define your API routes here
-// Example: app.use('/api', apiRoutes);
+// // Define your API routes here
+// // Example: app.use('/api', apiRoutes);
 
-// Catch-all route for SPA
+// // Catch-all route for SPA
 // app.get('*', (req, res, next) => {
 //   // Use a regex to exclude API routes or specific paths
 //   if (/^\/api/.test(req.path)) {
