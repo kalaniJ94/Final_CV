@@ -10,8 +10,12 @@
 - [Credits](#credits)
 - [License](#license)
 - [Badges](#badges)
-- [Hot to Contribute](#how-to-contribute)
+- [How to Contribute](#how-to-contribute)
 - [Tests](#tests)
+
+Deployed Site: https://celestialvoyages.onrender.com/
+
+Github Repo: https://github.com/kalaniJ94/Final_CV
 
 
 ## User Story
@@ -53,8 +57,10 @@ To run the app locally, enter 'run npm develop' into the console.
 ## Usage
 
 [Screenshot showing the Login screen](./client/src/assets/images/login.png)
+[Screenshot showing the two package options](./client/src/assets/images/packages.png)
 [Screenshot showing the basicVoyages page, and the glowing function](./client/src/assets/images/basic.png)
 [Screenshot showing the premiumVoyages page](./client/src/assets/images/premium.png)
+
 
 ## Credits
 
