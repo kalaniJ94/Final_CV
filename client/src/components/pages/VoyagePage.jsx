@@ -1,63 +1,44 @@
 import Navigation from "./Navigation";
-import React, { useEffect, useState } from "react";
-import Auth from '../../utils/auth.js';
+import React from "react";
 import VoyageCard from '../VoyageCard';
 
 function Voyages() {
-  const [voyages, setVoyages] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const getVoyages = async () => {
-      try {
-        const authHeaders = Auth.withAuth();
-        // console.log('authHeaders', authHeaders);
-
-        const response = await fetch('/api/voyages', authHeaders);
-        console.log('response', response);
-        if (!response.ok) {
-          throw new Error('Failed to fetch voyages');
-        }
-        const data = await response.json();
-        setVoyages(data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setError(error.message || 'An error occurred while fetching voyages');
-        setLoading(false);
-      }
-    };
-
-    getVoyages();
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  // Hardcoded data for voyages
+  const voyages = [
+    {
+      _id: '1',
+      title: 'Basic Celestial Odyssey',
+      price: '$1,000,000',
+      destinations: 'Vulcanis Inferna, Zephyria, Coloris Orbis',
+      imageIndex: 0,
+    },
+    {
+      _id: '2',
+      title: 'Premium Galactic Getaway',
+      price: '$5,000,000',
+      destinations: 'Coralline Nebulae, Dulcia Orbita, Aridius Prime, Spectra Maximus, Verdantia Secreto',
+      imageIndex: 1,
+    },
+  ];
 
   return (
     <div style={{ flex: 1 }}>
-    <Navigation />
-    <p className="pickVoyage">Please choose your voyage from the options below!</p>
+      <Navigation />
+      <p className="pickVoyage">Please choose your voyage from the options below!</p>
       
-    <div className="form-element">
-      {voyages.map((voyage, index) => (
-        <VoyageCard
-          key={voyage._id}
-          title={voyage.title}
-          price={voyage.price}
-          destinations={voyage.destinations}
-          imageIndex={index % 2} // Alternate between 0 and 1 for each card
-        />
-      ))}
+      <div className="form-element">
+        {voyages.map((voyage, index) => (
+          <VoyageCard
+            key={voyage._id}
+            title={voyage.title}
+            price={voyage.price}
+            destinations={voyage.destinations.split(', ')} 
+            imageIndex={index % 2} // Alternate between 0 and 1 for each card
+          />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
 }
 
 export default Voyages;
